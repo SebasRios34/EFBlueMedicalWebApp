@@ -1,0 +1,69 @@
+﻿@model EFBlueMedicalWebApp.Models.FixedAssets
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Activos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AssetID" />
+            <div class="form-group">
+                <label asp-for="AssetName" class="control-label"></label>
+                <input asp-for="AssetName" class="form-control" />
+                <span asp-validation-for="AssetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentID" class="control-label"></label>
+                <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+                <span asp-validation-for="DepartmentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUsed" class="control-label"></label>
+                <input asp-for="LastUsed" class="form-control" />
+                <span asp-validation-for="LastUsed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsefulLife" class="control-label"></label>
+                <input asp-for="UsefulLife" class="form-control" />
+                <span asp-validation-for="UsefulLife" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepreciationRate" class="control-label"></label>
+                <input asp-for="DepreciationRate" class="form-control" />
+                <span asp-validation-for="DepreciationRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepreciatedAmount" class="control-label"></label>
+                <input asp-for="DepreciatedAmount" class="form-control" />
+                <span asp-validation-for="DepreciatedAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a Activos</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EFBlueMedicalWebApp.Models.FixedAssets>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Activos</h1>
+
+<p>
+    <a asp-action="Create">Crear Activo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUsed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsefulLife)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepreciationRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepreciatedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsefulLife)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepreciationRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepreciatedAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AssetID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.AssetID">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.AssetID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
