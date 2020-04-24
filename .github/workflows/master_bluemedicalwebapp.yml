@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'bluemedicalwebapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0a0067604413454cb4e94b2b46b59977 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_52f707ed3fb7487897e6cdcef62ef7c3 }}
         package: ${{env.DOTNET_ROOT}}/myapp 
